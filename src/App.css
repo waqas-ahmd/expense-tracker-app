@@ -40,7 +40,7 @@
 }
 
 .box2 {
-  width: 100%;
+  width: calc(50% - 20px);
 }
 .TotalIncomeandBalance {
   display: flex;
@@ -137,6 +137,12 @@
   font-weight: 500;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+  overflow-x: scroll;
+}
+
+.box-amount::-webkit-scrollbar {
+  display: none;
+  width: 0;
 }
 
 .box-button {
