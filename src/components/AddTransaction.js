@@ -10,8 +10,9 @@ export default function AddTransaction({
   const addNewTransaction = () => {
     if (valueRef.current.value) {
       let newValue = plus ? valueRef.current.value : -valueRef.current.value;
+      let untitled = plus ? "Untitled Earning" : "Untitled Expense";
       let newTransaction = {
-        title: titleRef.current.value || "Untitled",
+        title: titleRef.current.value || untitled,
         amount: parseFloat(newValue),
         time: new Date().toLocaleString(),
       };
