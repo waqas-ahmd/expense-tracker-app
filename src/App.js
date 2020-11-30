@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import AddTransaction from "./components/AddTransaction";
+import TotalExpenses from "./components/TotalExpenses";
+import TransactionHistory from "./components/TransactionHistory";
 
-function App() {
+export default function App() {
+  const [transactions, setTransactions] = useState([]);
+  const [showAddBox, setShowAddBox] = useState(false);
+  const [plus, setPlus] = useState(true);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="App-Title"> EXPENSE TRACKER APP</div>
+      <TotalExpenses
+        transactions={transactions}
+        setPlus={setPlus}
+        setShowAddBox={setShowAddBox}
+      />
+      {showAddBox && (
+        <AddTransaction
+          plus={plus}
+          setTransactions={setTransactions}
+          setShowAddBox={setShowAddBox}
+        />
+      )}
+      <TransactionHistory
+        transactions={transactions}
+        setTransactions={setTransactions}
+      />
     </div>
   );
 }
-
-export default App;

@@ -1,38 +1,233 @@
 .App {
+  margin: auto;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  width: 480px;
+  height: calc(100vh - 10px);
+  padding: 5px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  background-color: rgb(255, 255, 255);
+}
+
+@media screen and (max-width: 480px) {
+  .App {
+    width: 98%;
+    height: calc(100vh - 5px);
+  }
+}
+
+.App-Title {
+  background-color: white;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: black;
+  box-shadow: 0px 0px 4px black;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 3px;
+}
+.box {
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px grey;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.TotalBalance .box-amount {
+  padding: 3px;
+}
+
+.box2 {
+  width: 100%;
+}
+.TotalIncomeandBalance {
+  display: flex;
+  flex-direction: row;
+}
+
+.TotalExpenses,
+.AddTransaction,
+.TransactionHistory {
+  padding: 5px;
+  margin: 5px;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 4px black;
+}
+
+.AddTransaction,
+.TransactionHistory {
+  margin-top: 5px;
+}
+
+.add-inputs {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.add-inputs div {
+  padding: 5px;
+}
+
+.add-inputs div input {
+  border: none;
+  padding: 4px;
+  width: 96%;
+  border-radius: 2px;
+  outline: none;
+  letter-spacing: 1px;
+  box-shadow: 0px 0px 3px lightgray;
+}
+
+.add-inputs div input:focus {
+  box-shadow: 0px 0px 3px rgb(73, 73, 73);
+}
+
+.transaction-title,
+.h-title {
+  padding: 5px;
+  font-size: small;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.TransactionHistory {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.TransactionHistoryList {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  flex-grow: 1;
+}
+
+.TransactionHistoryListItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  margin: 5px;
+  padding: 2px 5px 2px;
+  box-shadow: 0px 0px 3px grey;
+  border-radius: 3px;
+}
+
+.box-title {
+  background-color: lightgray;
+  margin: 3px;
+  padding: 4px;
+  color: gray;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: smaller;
+  letter-spacing: 2px;
+  background-color: white;
+  border-bottom: 1px solid lightgray;
+}
+
+.box-amount {
+  font-size: xx-large;
+  font-weight: 500;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.box-button {
+  font-size: smaller;
+  margin: 2px;
   color: white;
+  border-radius: 3px;
+  background-color: rgb(97, 97, 255);
+  cursor: pointer;
+  padding: 5px;
+}
+.box-button:hover,
+.add-trans-btn:hover {
+  letter-spacing: 1px;
 }
 
-.App-link {
-  color: #61dafb;
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.add-trans-btn {
+  width: 20%;
+  font-size: smaller;
+  margin: 2px;
+  color: white;
+  border-radius: 3px;
+  background-color: rgb(117, 117, 117);
+  background-color: rgb(97, 97, 255);
+  cursor: pointer;
+  padding: 5px;
+}
+
+.title-time .one-transaction-title {
+  font-weight: 700;
+  text-align: left;
+  font-size: small;
+  letter-spacing: 1px;
+}
+
+.title-time .transaction-time {
+  text-align: left;
+  font-size: small;
+  font-style: italic;
+  color: gray;
+}
+.THAmount {
+  font-weight: bold;
+  padding-right: 5px;
+  color: black;
+}
+.minus {
+  color: orangered;
+}
+.plus {
+  color: #0044ff;
+}
+
+.del-btn {
+  width: 18px;
+  height: 18px;
+  padding: 4px;
+  margin-left: 10px;
+  background-color: rgb(255, 0, 0);
+  background-image: url(https://i.imgur.com/vQgyGIp.png);
+  background-position: center;
+  background-size: 17px 17px;
+  border-radius: 100px;
+  background-repeat: no-repeat;
+}
+
+.del-btn:hover {
+  box-shadow: 0px 0px 4px black;
+}
+
+.THAmount1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.no-transactions {
+  letter-spacing: 2px;
+  font-size: small;
+  color: gray;
+}
+
+.cancel-btn {
+  background-color: rgb(255, 255, 255);
+  color: rgb(97, 97, 255);
+  border: 1px solid rgb(97, 97, 255);
 }
